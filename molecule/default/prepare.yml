@@ -1,0 +1,13 @@
+---
+- name: Prepare
+  hosts: all
+  become: true
+  gather_facts: false
+  tasks:
+    # Docker bind-mounts /etc/hosts, so the role's atomic rename onto it fails with EBUSY.
+    - name: Pre-seed /etc/hosts with the converge hostname
+      ansible.builtin.lineinfile:
+        path: /etc/hosts
+        regexp: '^127\.0\.1\.1\s+'
+        line: "127.0.1.1 test-host"
+        unsafe_writes: true
