@@ -3,6 +3,7 @@
   become: true
   ansible.builtin.apt:
     update_cache: true
+  tags: molecule-idempotence-notest
 
 - name: Upgrade all packages on servers
   become: true

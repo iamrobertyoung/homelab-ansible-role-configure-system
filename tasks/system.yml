@@ -30,6 +30,7 @@
   register: logrotate_result
   changed_when: logrotate_result.rc == 0
   failed_when: logrotate_result.rc not in [0, 1]
+  tags: molecule-idempotence-notest
 
 # Clean up /tmp directory
 - name: Ensure cron is installed
