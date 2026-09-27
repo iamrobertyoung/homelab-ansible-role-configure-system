@@ -32,6 +32,12 @@
   failed_when: logrotate_result.rc not in [0, 1]
 
 # Clean up /tmp directory
+- name: Ensure cron is installed
+  become: true
+  ansible.builtin.apt:
+    name: cron
+    state: present
+
 - name: Clean up files in /tmp older than specified days
   become: true
   ansible.builtin.cron:
