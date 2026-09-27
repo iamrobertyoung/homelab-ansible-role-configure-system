@@ -1,0 +1,5 @@
+---
+scripts:
+  setup: |
+    mise install
+    mise exec -- pre-commit install
