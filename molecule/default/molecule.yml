@@ -18,10 +18,8 @@ platforms:
 
 provisioner:
   name: ansible
-  env:
-    # Docker bind-mounts /etc/hosts, so atomic renames onto it fail with EBUSY.
-    ANSIBLE_UNSAFE_WRITES: "true"
   playbooks:
+    prepare: prepare.yml
     converge: converge.yml
     verify: verify.yml
 
