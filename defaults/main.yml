@@ -12,3 +12,9 @@ configure_system_logrotate_rotate_count: 10
 configure_system_docker_log_max_size: "100m"
 configure_system_docker_log_max_file: "3"
 configure_system_tmp_cleanup_days: 30
+
+# Keys allowed to log in as the CI user, so GitHub Actions on the homelab runners can run playbooks
+configure_system_ci_user: ansible
+configure_system_ci_authorized_keys:
+  # yamllint disable-line rule:line-length
+  - "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPiCidw0Axf0pjPE10mJfr3OquafEl0GuC+LmtEkPbpJ github-actions ci -> ansible@homelab"
