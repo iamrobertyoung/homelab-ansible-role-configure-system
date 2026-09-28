@@ -1,0 +1,8 @@
+---
+- name: Authorize CI keys for the CI user
+  become: true
+  ansible.posix.authorized_key:
+    user: "{{ configure_system_ci_user }}"
+    key: "{{ item }}"
+    state: present
+  loop: "{{ configure_system_ci_authorized_keys }}"

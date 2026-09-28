@@ -24,3 +24,9 @@
   tags:
     - configure_system
     - maintenance
+
+- name: Include CI access tasks
+  ansible.builtin.include_tasks: ci-access.yml
+  tags:
+    - configure_system
+    - ci_access

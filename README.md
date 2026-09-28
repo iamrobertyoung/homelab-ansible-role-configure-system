@@ -25,6 +25,8 @@ Ansible role for configuring homelab systems. Handles package updates, hostname 
 | `configure_system_docker_log_max_size` | `"100m"` | Max size for Docker container logs |
 | `configure_system_docker_log_max_file` | `"3"` | Max number of Docker log files |
 | `configure_system_tmp_cleanup_days` | `30` | Delete files in /tmp older than this |
+| `configure_system_ci_user` | `ansible` | User GitHub Actions logs in as |
+| `configure_system_ci_authorized_keys` | homelab CI key | Public keys authorized for `configure_system_ci_user` |
 
 ## Tags
 
@@ -35,6 +37,7 @@ Run specific parts of the role using tags:
 - `updates` - Package updates only
 - `hostname` - Hostname configuration
 - `maintenance` - System maintenance (log rotation, cleanup)
+- `ci_access` - Authorize the CI key for the CI user
 
 ## Usage
 

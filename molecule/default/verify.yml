@@ -58,3 +58,13 @@
           - "'logrotate' in ansible_facts.packages"
         fail_msg: "logrotate is not installed"
         success_msg: "logrotate is installed"
+
+    - name: Read the CI user's authorized keys
+      ansible.builtin.slurp:
+        src: /home/ansible/.ssh/authorized_keys
+      register: ci_authorized_keys
+
+    - name: Assert the CI key is authorized
+      ansible.builtin.assert:
+        that:
+          - "'github-actions ci -> ansible@homelab' in (ci_authorized_keys.content | b64decode)"
