@@ -2,7 +2,7 @@
   "branches": [
     "main"
   ],
-  "repositoryUrl": "https://github.com/RobertYoung/homelab-ansible-role-configure-system",
+  "repositoryUrl": "https://github.com/iamrobertyoung/homelab-ansible-role-configure-system",
   "plugins": [
     [
       "@semantic-release/commit-analyzer",
