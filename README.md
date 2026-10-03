@@ -1,9 +1,9 @@
 # homelab-ansible-role-configure-system
 
-[![Lint](https://github.com/RobertYoung/homelab-ansible-role-configure-system/actions/workflows/lint.yml/badge.svg)](https://github.com/RobertYoung/homelab-ansible-role-configure-system/actions/workflows/lint.yml)
-[![Release](https://github.com/RobertYoung/homelab-ansible-role-configure-system/actions/workflows/release.yml/badge.svg)](https://github.com/RobertYoung/homelab-ansible-role-configure-system/actions/workflows/release.yml)
+[![Lint](https://github.com/iamrobertyoung/homelab-ansible-role-configure-system/actions/workflows/lint.yml/badge.svg)](https://github.com/iamrobertyoung/homelab-ansible-role-configure-system/actions/workflows/lint.yml)
+[![Release](https://github.com/iamrobertyoung/homelab-ansible-role-configure-system/actions/workflows/release.yml/badge.svg)](https://github.com/iamrobertyoung/homelab-ansible-role-configure-system/actions/workflows/release.yml)
 [![SLSA 3](https://slsa.dev/images/gh-badge-level3.svg)](https://slsa.dev)
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/RobertYoung/homelab-ansible-role-configure-system/badge)](https://scorecard.dev/viewer/?uri=github.com/RobertYoung/homelab-ansible-role-configure-system)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/iamrobertyoung/homelab-ansible-role-configure-system/badge)](https://scorecard.dev/viewer/?uri=github.com/iamrobertyoung/homelab-ansible-role-configure-system)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Ansible role for configuring homelab systems. Handles package updates, hostname configuration, log rotation, and system maintenance tasks.
@@ -44,7 +44,7 @@ Run specific parts of the role using tags:
 ### Install via requirements.yml
 
 ```yaml
-- src: git@github.com:RobertYoung/homelab-ansible-role-configure-system.git
+- src: git@github.com:iamrobertyoung/homelab-ansible-role-configure-system.git
   scm: git
   version: main
   name: configure_system
@@ -96,22 +96,22 @@ ansible-playbook site.yml --tags "hostname"
 
 This project implements [SLSA](https://slsa.dev/) Level 3 provenance for release artifacts.
 
-- Provenance attestations are submitted to [GitHub Attestations](https://github.com/RobertYoung/homelab-ansible-role-configure-system/attestations)
+- Provenance attestations are submitted to [GitHub Attestations](https://github.com/iamrobertyoung/homelab-ansible-role-configure-system/attestations)
 - Release artifacts include `.intoto.jsonl` provenance files
-- Security posture tracked via [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/RobertYoung/homelab-ansible-role-configure-system)
+- Security posture tracked via [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/iamrobertyoung/homelab-ansible-role-configure-system)
 
 ### Verifying Release Provenance
 
 ```bash
 # Using GitHub CLI (recommended)
 gh attestation verify configure_system-<VERSION>.tar.gz \
-  --repo RobertYoung/homelab-ansible-role-configure-system
+  --repo iamrobertyoung/homelab-ansible-role-configure-system
 
 # Or using slsa-verifier
 VERSION="v1.0.0"  # Replace with desired version
 slsa-verifier verify-artifact configure_system-${VERSION}.tar.gz \
   --provenance-path configure_system-${VERSION}.tar.gz.intoto.jsonl \
-  --source-uri github.com/RobertYoung/homelab-ansible-role-configure-system \
+  --source-uri github.com/iamrobertyoung/homelab-ansible-role-configure-system \
   --source-tag "${VERSION}"
 ```
 
